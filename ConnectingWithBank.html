@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connecting With Your Bank</title>
+    <link rel="stylesheet" href="CSS\ConnectingWithBank.css">
+</head>
+<body onload="func()" onload="validelogin()" >
+    <p id="heading">Connecting With Your Bank <span id="dot"></span></p>
+    <div class="loader"></div>
+    <p id="time"></p>
+</body>
+<script>
+
+// function validelogin(){
+//         const flag=sessionStorage.getItem('UserFlag');
+//     if(flag==undefined){
+//         window.location.href="unauthorizedUser.html";
+//     }
+//     }
+
+
+    let t=document.getElementById("time");
+    let dot=document.getElementById("dot");
+let wait=5;
+setInterval(func,1000);
+function func(){
+    if(wait==6){
+        dot.innerHTML=".";
+    }else if(wait==5){
+        dot.innerHTML="..";
+    }
+    else if(wait==4){
+        dot.innerHTML="...";
+    }
+    else if(wait==3){
+        dot.innerHTML=".";
+    }
+    else if(wait==2){
+        dot.innerHTML="..";
+    }else if(wait==1){
+        dot.innerHTML="...";
+    }
+
+    t.innerHTML=wait;
+    if(wait==0){
+        window.location.href="otp.html";
+    }
+     wait--;
+}
+</script>
+</html>

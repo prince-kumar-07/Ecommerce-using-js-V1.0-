@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #msg{
+        text-align: center;
+    }
+    #wait{
+        color: red;
+    }
+
+</style>
+<body onload="validelogin()">
+    <h1 style="text-align:center ;">Payment gateway Timeout</h1>
+    <p id="msg">You will be redirected to payment page in <span id="wait">00:10</span></p>
+</body>
+<script>
+
+// function validelogin(){
+//         const flag=sessionStorage.getItem('UserFlag');
+//     if(flag==undefined){
+//         window.location.href="unauthorizedUser.html";
+//     }
+//     }
+    let time=10;
+     let msg=document.getElementById("wait");
+     setInterval (timer,1000);
+    function timer(){
+          time--;
+         msg.innerHTML=`00:${time}`;
+        
+
+        if(time==0)
+        window.location.href="home.html";
+    }
+
+    
+
+    
+</script>
+</html>

@@ -1,0 +1,119 @@
+html{
+
+background: #1FC9C4;
+background: -webkit-linear-gradient(top left, #1FC9C4, #A8DE97);
+background: -moz-linear-gradient(top left, #1FC9C4, #A8DE97);
+background: linear-gradient(to bottom right, #1FC9C4, #A8DE97);
+background-repeat: calc();
+    
+}
+    
+#div2{
+    height: 500px;
+    width: 600px;
+
+    margin: auto;
+    
+}
+#password{
+    padding-left: -8px;
+}
+#user{
+    font-size: 100px;
+    margin-left: 240px;
+    margin-top: 25px;
+    color: navy;
+}
+
+#icon1{
+margin-left: 150px;
+font-size: 20px;
+padding: 6px; 
+}
+#icon2{
+    margin-left: 147px;
+    font-size: 20px;
+    padding: 6px; 
+    }
+#submit{
+    margin-left: 220px;
+    border: 0px;
+    padding: 12px;
+    font-size: large;
+    border-radius: 12px;
+}
+#submit:hover{
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+
+}
+#submit:active{
+    transform: translateY(4px);
+
+
+}
+#signup{
+    border: 0px;
+    background-color: transparent;
+    color: rgb(255, 0, 0);
+    font-size: 25px;
+}
+#signup:active{
+    transform: translateY(4px);
+    cursor: pointer;
+}
+#signup:hover{
+    cursor: pointer;
+    background-color: rgb(77, 15, 222);
+    color: white;
+}
+#signmsg{
+    text-align: center;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+
+input{
+    
+    border: 0px solid rgb(28, 114, 110);
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 8px;
+} 
+#header{
+
+    text-align: center;
+    color: white;
+    font-size: 55px;
+
+
+}
+#div1{
+    height: 125px;
+    width: auto;
+    background-color: black;
+    margin: auto;
+    margin: -24px;
+}
+#log{
+    text-align: center;
+    font-size: 40px;
+    color: green;
+}
+#loog{
+    text-align: center;
+    font-size: 40px;
+    color: red;
+
+}
+#err-msg{
+    color: red;
+}
+@media (max-width: 600px) {
+   
+    body {
+        background-repeat: no-repeat;
+      /* background-color: lightblue; */
+    }
+  }

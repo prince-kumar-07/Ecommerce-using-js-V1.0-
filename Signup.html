@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="CSS/Signup.css">
+    <script src="https://kit.fontawesome.com/34bb937102.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p id="heading">Sign Up Page</p>
+    
+
+    <div id="div2">
+        
+        <input id="Fname" type="text" placeholder="First Name">
+        <input id="Lname" type="text" placeholder="Last Name">
+        <br>
+        <br>
+        <input id="pnumber" type="number" placeholder="Phone Number">
+        <input id="email" type="email" placeholder="example@email.com">
+        <br>
+        <br>
+        <input id="1pass" type="password" placeholder="Enter password">
+        <input id="2pass" type="password" placeholder="Confirm password">
+        <br>
+        <br>
+        <button id="submit" onclick="validate()">SignUp</button>
+
+        <p id="footer">already have account <span><a href="login.html"><button id="signin">Sign-in</button></a></span></p>
+
+        <p id="err-msg"></p>
+        <p id="sucess"></p>
+
+        <!-- <p id="p" style="margin-left: 25px;">password</p>
+        <p id="i" style="margin-left: 25px; margin-top: -20px;">id</p> -->
+        
+
+
+
+    </div>
+    
+</body>
+<script>
+    let fname=document.getElementById("Fname");
+    let lname=document.getElementById("Lname");
+    let id=document.getElementById("email");
+    let pno=document.getElementById("pnumber")
+    let pass1=document.getElementById("1pass");
+    let pass2=document.getElementById("2pass");
+    let t1=document.getElementById("p");
+    let t2=document.getElementById("i");
+    let errmsg=document.getElementById("err-msg");
+    let sucess=document.getElementById("sucess");
+
+    function validate(){
+         
+        if(fname.value==""){
+            errmsg.innerHTML="first name is empty";
+        }
+        else if(lname.value==""){
+            errmsg.innerHTML="Last name is empty";
+        }
+        else if(pno.value==""){
+            errmsg.innerHTML="Please enter phone no";
+        }
+        else if(pno.value=="" ){
+            errmsg.innerHTML="Please enter phone no";
+        }
+        else if(id.value==""){
+            errmsg.innerHTML="Please enter email ID";
+        }
+        else if(pass1.value!==pass2.value){
+            errmsg.innerHTML="Password does not match";
+        }else{
+            const sid=String(id.value);
+            const  spass=String(pass1.value);
+            localStorage.setItem("userid",sid);
+            localStorage.setItem("password",spass);
+            sucess.innerHTML=`Hey, ${fname.value} your account has been created successfully`;
+
+        }
+        // t1.innerHTML=localStorage.getItem("userid");
+        // t2.innerHTML=localStorage.getItem("password");
+    }
+
+
+</script>
+</html>

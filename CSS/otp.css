@@ -1,0 +1,45 @@
+html{
+    /* background-image: ur(Media\Aqualicious.jpg); */
+    background-image: url(Aqualicious.jpg);
+    background-repeat: no-repeat;
+}
+p{
+   text-align: center;
+}
+#div1{
+    height: 300px;
+    width: 600px;
+    margin: auto;
+    border: 4px solid black;
+    background-color: white;
+}
+#tout{
+    font-size: 20px;
+}
+span{
+    color: red;
+}
+#submit{
+    margin-left: 230px;
+    border: 0px;
+    padding: 8px;
+    background-color: rgb(153, 155, 160);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+}
+#submit:hover {
+    background-color: rgb(24, 95, 237);
+  }
+#submit:active{
+    transform: translateY(4px);
+}
+#otp-input{
+    border: 2px solid black;
+    margin-left: 210px;
+    padding: 12px;
+    border-radius: 6px;
+}

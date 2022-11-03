@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="C:\Users\princ\OneDrive\Desktop\Project-1\E-com-self\CSS\pgindex-1.css">
+    <script src="https://kit.fontawesome.com/34bb937102.js" crossorigin="anonymous"></script>
+</head>
+<body onload="validelogin()">
+
+
+
+    <p id="head">Payment Gateway</p>
+         
+    <div id="div1">
+
+        
+
+            
+            <p id="card">Card Number: <input id="c1" placeholder="1234" type="number"> - <input id="c2" placeholder="5678" type="number"> - <input id="c3" placeholder="9012" type="number"> - <input id="c4" placeholder="3456" type="number"></p> 
+            
+            <p id="Expiry">Expiry Date: <input id="expire" placeholder="08 / 2022" id="date" type="number"></p>
+
+            <p id="ccv">CVV: <input id="cvv" placeholder="123" type="password"></p>
+
+            <p id="holder">Card Holder Name:<input id="Jonh"  placeholder="Jonh" id="name" type="text"></p>
+              
+            <button id="submit">Submit</button></a>
+            <br>
+             <p id="err-msg"> <span id=""> </span></p>
+             
+    
+            <span id="logo">
+                <i id="first" class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-amazon-pay"></i>
+                <i class="fa-brands fa-cc-amex"></i>
+                <i class="fa-brands fa-cc-discover"></i>
+                <i class="fa-brands fa-paypal"></i>
+                <i class="fa-brands fa-apple-pay"></i>
+                <i class="fa-brands fa-google-pay"></i>
+                
+
+                
+
+    
+            </span>
+        </div>
+            
+        
+    
+</body>
+ 
+<script>
+   const c1=document.getElementById("c1");
+   const c2=document.getElementById("c2");
+   const c3=document.getElementById("c3");
+   const c4=document.getElementById("c4");
+   const cvv=document.getElementById("cvv");
+   let errmsg=document.getElementById("err-msg")
+   const Expiry=document.getElementById("expire");
+   const holder=document.getElementById("Jonh");
+
+   document.getElementById("submit").addEventListener("click",validate);
+
+   
+    // function validelogin(){
+    //     const flag=sessionStorage.getItem('UserFlag');
+    // if(flag==undefined){
+    //     window.location.href="unauthorizedUser.html";
+    // }
+    // }
+
+   
+
+   function validate(){
+    
+   
+
+    
+      
+
+   
+
+   
+
+   if(c1.value=="" || c1.value<1000 || c1.value>9999){
+    errmsg.innerHTML=`Invalid Card Number in box 1`;
+   }
+   else if(c2.value=="" || c1.value<1000 || c1.value>9999){
+    errmsg.innerHTML=`Invalid Card Number in box 2`;
+   }
+   else if(c3.value=="" || c1.value<1000 || c1.value>9999){
+    errmsg.innerHTML=`Invalid Card Number in box 3`;
+   }
+   else if(c4.value=="" || c1.value<1000 || c1.value>9999){
+    errmsg.innerHTML=`Invalid Card Number in box 4`;
+   }
+    else if(Expiry.value==""){
+        errmsg.innerHTML=`Invalid Expiry date`;
+    }
+    else if(cvv.value=="" || cvv.value<100 || cvv.value>999){
+        errmsg.innerHTML=`Invalid CVV`;
+    }
+    else if(holder.value==""){
+        errmsg.innerHTML=`Invalid Name`;
+    }else
+    {
+           const StoredC1=String(c1.value);
+           const StoredC2=String(c4.value);
+           localStorage.setItem("FirstFour",StoredC1);
+           localStorage.setItem("LastFour",StoredC2);
+          
+           window.location.href="ConnectingWithBank.html";
+    }
+    console.log((box1));
+    console.log(box2);
+
+}
+
+
+
+</script>
+
+</html>

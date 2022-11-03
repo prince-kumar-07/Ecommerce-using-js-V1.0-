@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   #header{
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+   }
+
+   .loader{
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #34dbb4;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 0.8s linear infinite;
+    margin-left: 550px;
+
+}
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+</style>
+
+
+<body onload="validelogin()">
+    <p id="header">Verifying OTP <span id="dot"></span></p>
+    <div class="loader"></div>
+</body>
+<script>
+
+// function validelogin(){
+//         const flag=sessionStorage.getItem('UserFlag');
+//     if(flag==undefined){
+//         window.location.href="unauthorizedUser.html";
+//     }
+//     }
+    let dot=document.getElementById("dot");
+    let otp=localStorage.getItem("otp");
+
+    let wait=3;
+    setInterval(myfunc,1000);
+
+
+
+
+    function myfunc(){
+
+        if(wait==3){
+           dot.innerHTML=".";
+        }else if(wait==2){
+            dot.innerHTML="..";
+        }else if(wait==1){
+            dot.innerHTML="...";
+        }
+        else if(wait==0){
+            if(otp==490149)
+            window.location.href="paymentsuccess.html";
+            else
+            window.location.href="paymentfailed.html";
+ 
+ 
+            localStorage.removeItem("FirstFour");
+            localStorage.removeItem("LastFour");
+        }
+            
+
+
+        wait--;
+    }
+</script>
+</html>

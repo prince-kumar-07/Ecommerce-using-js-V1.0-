@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otp</title>
+    <link rel="stylesheet" href="CSS/otp.css">
+</head>
+<body onload="validelogin()">
+
+    <h1>OTP Verification Page</h1>
+    <br>
+    <br>
+
+    <div id="div1">
+        <p id="date">Transaction Date: </p>
+        
+        <p id="card"><span id="fdigit"></p>
+        <p id="maskedCard">xxx</p>
+        <input id="otp-input" placeholder="Enter OTP" type="number">
+        <br>
+        <br>
+        <button id="submit" onclick="myFunction()">CONFIRM PAYMENT</button>
+
+        <br>
+         <p id="status"></p> 
+   
+        
+        <p id="tout">This page will auto timeout in <span id="timeout">01:00</span></p>
+
+    </div>
+    
+</body>
+
+<script>
+
+function validelogin(){
+    var amount=parseInt(localStorage.getItem("payamount"));
+    console.log(`Transaction amount: ${amount} INR`)
+    
+    document.getElementById("status").innerHTML=`Transaction amount: ${amount} INR`;
+    //     const flag=sessionStorage.getItem('UserFlag');
+    // if(flag==undefined){
+    //     window.location.href="unauthorizedUser.html";
+    // }
+    }
+
+      
+      const cad=document.getElementById("card");
+      cad.innerHTML=localStorage.getItem("card");
+      let masked=document.getElementById("maskedCard");
+     
+
+      const SFF=localStorage.getItem("FirstFour");
+      const SLF=localStorage.getItem("LastFour");
+      masked.innerHTML=`${SFF}-xxxx-xxxx-${SLF}`;
+
+// document.getElementById("submit").onclick = function() {myFunction()};
+
+function myFunction() {
+    let otp1 = document.getElementById("otp-input").value;
+    let opt2=String(otp1);
+    localStorage.setItem("otp",opt2);
+    window.location.href="verifyingOTP.html"
+
+}
+    
+    const d=document.getElementById("date");
+    const t=document.getElementById("time");
+    const date = new Date();
+
+    let currentDate = `Transaction Date: ${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}  ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    d.innerHTML=currentDate;
+    
+
+
+     const start=1;
+    let time=start*60;
+
+    const c=document.getElementById("timeout");
+        setInterval(update,1000);
+    function update(){
+        
+       const minutes=Math.floor(time/60);
+        let seconds=(time%60);
+        c.innerHTML=`${minutes} : ${seconds}`;
+
+
+        if(time>-1)
+           time--;
+
+        if(time==0){
+            localStorage.removeItem("FirstFour");
+            localStorage.removeItem("LastFour");
+            window.location.href = "timeoutpage.html";
+        }
+         
+        
+
+    }
+
+</script>
+</html>

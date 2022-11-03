@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/34bb937102.js" crossorigin="anonymous"></script>
+    <title>Access denied</title>
+</head>
+   <style>
+    #para1{
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;}
+    #para2{
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+        
+    }
+   
+    #para3{
+        
+        cursor: pointer;
+        text-align: center;
+        font-size: 25px;
+        
+        
+    }
+    #button:hover{
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+    }
+    #button:active{
+        transform: translateY(6px)
+    }
+    #button{
+        border: 0px;
+        /* height: 30px;
+        width: 95px; */
+        size: 55px;
+        font-size: 20px;
+        background-color: transparent;
+        margin-left: 500px;
+        
+    }
+    #time{
+        color: red;
+        font-weight: bold;
+    }
+     #icon{
+        color: red;
+        margin-left: 550px;
+        
+     }
+   </style>
+<body onload="func()">
+    <p id="para1"> Access denied => Unauthorized User</p>
+    <p id="para2">User Must Login/SignUp before accessing this page</p>
+    <p id="para3">You will be rediredted to Login page in <span id="time"> 20 </span> </p>
+    <i id="icon" class="fa-sharp fa-10x fa-solid fa-ban"></i>
+    
+</body>
+<script>
+
+    let print=document.getElementById("time");
+    wait=20;
+
+    setInterval(myfunc,1000);
+
+    function myfunc(){
+
+        print.innerHTML=wait;
+
+
+        if(wait==0)
+        window.location.href="login.html";
+
+        wait--;
+    }
+
+
+
+</script>
+</html>
